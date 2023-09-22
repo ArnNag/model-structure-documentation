@@ -48,8 +48,8 @@ CREATE TABLE `model_structure` (
 CREATE TABLE `model_structure_uniprot` (
   `model_structure_id` int(10) unsigned NOT NULL,
   `uniprot_id` int(10) unsigned NOT NULL,
-  `uniprot_start` int(5) unsigned,
-  `uniprot_end` int(5) unsigned,
+  `uniprot_start` int(5) unsigned COMMENT '0-indexed, inclusive',
+  `uniprot_end` int(5) unsigned COMMENT '0-indexed, exclusive',
   KEY `model_structure_id` (`model_structure_id`),
   KEY `uniprot_id` (`uniprot_id`),
   CONSTRAINT `model_structure_uniprot_ibfk_1` FOREIGN KEY (`model_structure_id`) REFERENCES `model_structure` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
