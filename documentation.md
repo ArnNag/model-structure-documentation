@@ -114,6 +114,7 @@ Usage:
 
 ### Landing page
 The landing page code I wrote is at /h/anagle/www/scop-boot/alphafold/alphafold.php
+This requires you to build the modified RCSB package I've put here: https://github.com/ArnNag/rcsb-molstar/tree/make_component
 To access the test model I've been testing on, go to https://strgen.org/~anagle/scop-boot/alphafold/alphafold.php?name=AF-P63000-F1
 (This is referred to in my notebook as pdb_rowcol_fill.php)
 # TODO: the test case landing page is not currently working. I think it's due to hardcoded references to the paths of the structure files that we need to change to the final location we made in /lab/db .
