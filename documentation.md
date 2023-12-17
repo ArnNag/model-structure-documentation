@@ -1,5 +1,7 @@
-Documentation of model structure project
+# Documentation of model structure project
+
 Arnav Nagle
+
 nagle@berkeley.edu
 
 ### Summary
