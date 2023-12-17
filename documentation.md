@@ -12,9 +12,11 @@ The purpose of this project is to use structural and sequence comparison to iden
 
 1. Download the human model structures from the AlphaFold website. (Note: AlphaFoldDB has irregular releases, and the latest at the time of writing is v4. See https://alphafold.ebi.ac.uk/faq for release notes.)
 
+```
 mkdir af2_human_v4
 cd af2_human_v4
 curl https://ftp.ebi.ac.uk/pub/databases/alphafold/latest/UP000005640_9606_HUMAN_v4.tar | tar x
+```
 
 2. Convert the model structures to xml. (Note: I have not written code that parses the xml files yet; I am currently parsing the cif files, which have equivalent information, with the RCSB's cif-tools. We ultimately want to switch to using xml only to avoid this dependency.)
 
