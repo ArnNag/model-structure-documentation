@@ -121,16 +121,17 @@ CREATE TABLE `model_vs_domain_structure_alignment` (
 6. Populate model_vs_structure_alignment.
 Usage:
 ```
-# TODO: Write a bash script that iterates over all model structure IDs and submits them as jobs to GridEngine with the qsub command. Current code for one model structure is at /h/anagle/populate_model_vs_structure
+#TODO: Write a bash script that iterates over all model structure IDs and submits them as jobs to GridEngine with the qsub command. Current code for one model structure is at /h/anagle/populate_model_vs_structure
 ```
 
 ### Landing page
 The landing page code I wrote is at /h/anagle/www/scop-boot/alphafold/alphafold.php
 This requires you to build the modified RCSB package I've put here: https://github.com/ArnNag/rcsb-molstar/tree/make_component
+#TODO: Add build instructions
 To access the test model I've been testing on, go to https://strgen.org/~anagle/scop-boot/alphafold/alphafold.php?name=AF-P63000-F1
 (This is referred to in my notebook as pdb_rowcol_fill.php)
 ```
-# TODO: the test case landing page is not currently working. I think it's due to hardcoded references to the paths of the structure files that we need to change to the final location we made in /lab/db .
+#TODO: the test case landing page is not currently working. I think it's due to hardcoded references to the paths of the structure files that we need to change to the final location we made in /lab/db .
 ```
 
 ### Search functionality
@@ -140,7 +141,7 @@ We will eventually need to implement search functionality where users can input 
 We eventually want to show the user all PDB entries associated with a Uniprot entry on the Uniprot entry's landing page. These associations are denoted in PDB files with the DBREF records, and in CIF files in the STRUCT_REF category. We store the DBREF records mapped to RAF indices in the pdb_chain_dbref table. PDB DBREF records may contain errors and do not specify which Uniprot version they refer to, so I wrote code that uses the Levenshtein distance to see whether the region of the Uniprot sequence referred to by the DBREF records approximately matches the PDB chain sequence. 
 
 ```
-# TODO: Usage, output format
+#TODO: Usage, output format
 ```
 
 If we want to do analyses about where SCOPe domains lie in AlphaFold predictions for the same sequence as the PDB chain the domain derives from (say, to examine the plDDT and PAE within the domain), we need to be careful about which index in the PDB sequence corresponds to which index in the Uniprot sequence. The alignments between PDB chains and Uniprot sequences are theoretically provided by the DBREF records, with differences documented in SEQADV (STRUCT_REF_SEQ and STRUCT_REF_SEQ_DIF in CIF). SIFTS mappings are supposed to solve this problem, and are included as part of the "updated" CIF files that you can download from the PDBe website (not RCSB). The relevant records are in the ATOM_SITE and PDBX_SIFTS_UNP_SEGMENTS categories. I still have not found any record that explicitly references the version of the Uniprot sequence.
@@ -148,9 +149,9 @@ If we want to do analyses about where SCOPe domains lie in AlphaFold predictions
 ### Known issues
 1. The original Mol\* viewer has a sequence view that allows you to view the full SEQRES sequence and click on the residues in the sequence to locate them in the structure and select regions of sequence in Selection Mode. This disappears when forcing the viewer into a div.
 ```
-# TODO: link to what this is supposed to look like, describe how it disappeared
+#TODO: link to what this is supposed to look like, describe how it disappeared
 ```
-2. The AlphaFold model is colored by PAE by default, but when I make a component of the hit region, it becomes orange.
+2. The AlphaFold model is colored by pLLDT by default, but when I make a component of the hit region, it becomes orange.
 3. Unstable awk code
 4. The BLAST gaps are not accounted for correctly when computing the boundaries of hits.
 
