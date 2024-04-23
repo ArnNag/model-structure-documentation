@@ -118,10 +118,10 @@ CREATE TABLE `model_vs_domain_structure_alignment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Structural alignments between model structures and SCOP domains'
 ```
 
-6. Populate model_vs_structure_alignment.
+6. Populate model_vs_domain_structure_alignment.
 Usage:
 ```
-#TODO: Write a bash script that iterates over all model structure IDs and submits them as jobs to GridEngine with the qsub command. Current code for one model structure is at /h/anagle/populate_model_vs_structure
+#TODO: Write a bash script that iterates over all model structure IDs and submits them as jobs to GridEngine with the qsub command. Current code for one model structure is at /h/anagle/populate_model_vs_domain
 ```
 
 ### Landing page
